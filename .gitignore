@@ -1,0 +1,10 @@
+*.pyc
+__pycache
+.DS_Store
+venv
+.env.dev
+.env.prod
+.env.prod.db
+app/staticfiles/admin
+app/staticfiles/rest_framework
+app/mediafiles
