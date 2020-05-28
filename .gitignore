@@ -2,8 +2,8 @@
 __pycache
 .DS_Store
 venv
-.env.dev
-.env.prod
+.env.development
+.env.production
 .env.prod.db
 app/staticfiles/admin
 app/staticfiles/rest_framework
