@@ -3,6 +3,11 @@
 ## Want to learn how to build this?
 
 Check out the [post](https://testdriven.io/dockerizing-django-with-postgres-gunicorn-and-nginx).
+Or Download the starter from this [Repo](https://github.com/testdrivenio/django-on-docker).
+
+Also this Production ready Docker + Django + Bootstrap 4 starter pack. [project repo](https://github.com/ChrisBarnes7404/Docker-Django-Template)
+
+## [Dependants](Dependants.md)
 
 ## Want to use this project?
 
@@ -32,3 +37,6 @@ Uses gunicorn + nginx.
     ```
 
     Test it out at [http://localhost:1337](http://localhost:1337). No mounted folders. To apply changes, the image must be re-built.
+
+
+## Other Docker [Commands](Docker-comands.md)
