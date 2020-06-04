@@ -21,7 +21,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 SECRET_KEY = os.environ.get("SECRET_KEY")
 
-DEBUG = int(os.environ.get("DEBUG", default=0))
+DEBUG = os.environ.get("DEBUG")
 
 # 'DJANGO_ALLOWED_HOSTS' should be a single string of hosts with a space between each.
 # For example: 'DJANGO_ALLOWED_HOSTS=localhost 127.0.0.1 [::1]'
@@ -29,8 +29,9 @@ ALLOWED_HOSTS = os.environ.get("DJANGO_ALLOWED_HOSTS").split(" ")
 
 
 # Application definition
-
 INSTALLED_APPS = [
+    "admin_honeypot",
+    'django_admin_env_notice',
     "django.contrib.admin",
     "django.contrib.auth",
     "django.contrib.contenttypes",
@@ -38,8 +39,7 @@ INSTALLED_APPS = [
     "django.contrib.messages",
     "django.contrib.staticfiles",
 
-    'rest_framework',
-
+    "rest_framework",
 
 
 
@@ -68,16 +68,31 @@ TEMPLATES = [
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
-                'django.template.context_processors.debug',
+                # `allauth` needs this from django
                 'django.template.context_processors.request',
+
+                # `admin_env_notice` needs this
+                "django_admin_env_notice.context_processors.from_settings",
+
+                # Already defined Django-related contexts here
+                'django.template.context_processors.debug',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                # 'django.template.context_processors.media',
             ],
         },
     },
 ]
 
 WSGI_APPLICATION = 'hello_django.wsgi.application'
+
+
+ENVIRONMENT_NAME = "Development server"
+ENVIRONMENT_COLOR = "#FF0000"
+ENVIRONMENT_FLOAT = True
+# ENVIRONMENT_ADMIN_SELECTOR = "grp-header"
+
+
 
 
 # Database
@@ -107,22 +122,37 @@ REST_FRAMEWORK = {
     ]
 }
 
+
+# -------------------------{AUTH/ACCOUNT SETTINGS}----------------------------------------------
+# Where to redirect during authentication
+LOGIN_REDIRECT_URL = "/"
+LOGOUT_REDIRECT_URL = "/"
+
+# AUTH_USER_MODEL = 'users.CustomUser'
+
+ACCOUNT_EMAIL_REQUIRED = True
+ACCOUNT_USERNAME_REQUIRED = False
+
+
+ADMIN_HONEYPOT_EMAIL_ADMINS = True
+ADMINS = [('Chris Barnes', 'chris.barnes.2000@me.com')]
+
+AUTHENTICATION_BACKENDS = (
+    # Needed to login by username in Django admin, regardless of `allauth`
+    'django.contrib.auth.backends.ModelBackend',
+
+    # `allauth` specific authentication methods, such as login by e-mail
+    # 'allauth.account.auth_backends.AuthenticationBackend',
+)
+
+
 # Password validation
 # https://docs.djangoproject.com/en/2.2/ref/settings/#auth-password-validators
-
 AUTH_PASSWORD_VALIDATORS = [
-    {
-        'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator',
-    },
-    {
-        'NAME': 'django.contrib.auth.password_validation.MinimumLengthValidator',
-    },
-    {
-        'NAME': 'django.contrib.auth.password_validation.CommonPasswordValidator',
-    },
-    {
-        'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',
-    },
+    {'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator',},
+    {'NAME': 'django.contrib.auth.password_validation.MinimumLengthValidator'},
+    {'NAME': 'django.contrib.auth.password_validation.CommonPasswordValidator',},
+    {'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',},
 ]
 
 

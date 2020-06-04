@@ -46,7 +46,9 @@ from upload.views import image_upload
 
 urlpatterns = [
     path("", image_upload, name="upload"),
-    path("admin/", admin.site.urls),
+
+    path('admin/', include('admin_honeypot.urls', namespace='admin_honeypot')),
+    path("ACP/", admin.site.urls),
 
     # API
     path('api/', include(router.urls)),
@@ -55,3 +57,9 @@ urlpatterns = [
 
 if bool(settings.DEBUG):
     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+
+# if settings.DEBUG:
+#     import debug_toolbar
+#     urlpatterns = [
+#         path('__debug__/', include(debug_toolbar.urls)),
+#     ] + urlpatterns
