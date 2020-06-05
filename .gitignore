@@ -5,6 +5,5 @@ venv
 .env.development
 .env.production
 .env.prod.db
-app/staticfiles/admin
-app/staticfiles/rest_framework
+app/staticfiles/*
 app/mediafiles
