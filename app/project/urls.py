@@ -5,11 +5,12 @@ from django.conf.urls.static import static
 from django.views.static import serve
 
 
-from upload.views import image_upload
+from upload.views import image_upload, index
 from .serializer import router
 
 urlpatterns = [
-    path("", image_upload, name="upload"),
+    path('', index, name="index"),
+    path('upload', image_upload, name="upload"),
 
     path('admin/', include('admin_honeypot.urls', namespace='admin_honeypot')),
     path("ACP/", admin.site.urls),

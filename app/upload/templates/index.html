@@ -1,0 +1,41 @@
+<!-- templates/index.html -->
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<h1 class="text-center mb-5">Welcome to Project-name!</h1>
+
+<div class="row d-flex">
+    <!-- <div class="col text-center embed-responsive embed-responsive-16by9 float-right">
+        <video class="video-fluid" width="480" height="360" controls>
+            <source src="{% static 'videos/splash.mp4' %}" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+    </div> 
+    <img src="{% static 'img/splash.png' %}" class="img-fluid" style="width: 100%; float: left;" /> -->
+    <div class="col float-left mt-5">
+        <p>
+            
+        </p>
+        <p>For more information <a href="{% url 'creators' %}">about the Creators</a> please visit this link.</p>
+
+        <hr>
+
+
+    </div>
+</div>
+{% comment %}
+<!-- <div class="row">
+    <form action="{% url 'subscribe' %}" method="POST">{% csrf_token %}
+        <div class="row">
+            <div class="col">
+                <input type="email" class="form-control" placeholder="Subscribe" name="{{ form.sub.name }}" id="id_{{ form.sub.name }}">
+            </div>
+            <div class="col">
+                <input type="submit" name="Subscribe" class='btn btn-success'>
+            </div>
+        </div>
+    </form>
+</div> -->
+{% endcomment %}
+
+{% endblock %}
