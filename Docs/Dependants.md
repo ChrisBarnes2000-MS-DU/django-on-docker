@@ -1,21 +1,17 @@
+# Dependants
+
+Origonally based on this [post](https://testdriven.io/dockerizing-django-with-postgres-gunicorn-and-nginx).
+
 Includes the following built in support for:
-
-<!-- - **[``]()**:  -->
-<!-- - **[``]()**:  -->
-<!-- - **[``]()**:  -->
-
 - **[`django-admin-env-notice`](https://github.com/dizballanze/django-admin-env-notice)**: Visually distinguish environments in Django Admin.
 - **[`django-admin-honeypot`](https://django-admin-honeypot.readthedocs.io/en/latest/)**: django-admin-honeypot is a fake Django admin login screen to log and notify admins of attempted unauthorized access.
 - **[`django-allauth`](https://django-allauth.readthedocs.io/en/latest/installation.html)**: Django Allauth offers a fully integrated authentication app that allows for both local and social authentication.
 - **[`djangorestframework`](https://www.django-rest-framework.org/)**: Django REST framework is a powerful and flexible toolkit for building Web APIs.
 
 
-
-
-
-
-
-
+<!-- - **[``]()**:  -->
+<!-- - **[``]()**:  -->
+<!-- - **[``]()**:  -->
 
 <!-- 
 - **[`django-compressor`](https://github.com/django-compressor/django-compressor)**: Django Compressor processes, combines and minifies linked and inline Javascript or CSS in a Django template into cacheable static files. Supports such as CoffeeScript, LESS, and SASS.
