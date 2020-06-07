@@ -5,5 +5,4 @@ venv
 .env.development
 .env.production
 .env.prod.db
-app/staticfiles/*
 app/mediafiles

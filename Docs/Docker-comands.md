@@ -28,3 +28,12 @@ $ docker-compose logs
 ```bash
 $ docker-compose down
 ```
+
+
+<!--
+docker volume inspect <FILENAME_postgres_data>
+
+docker-compose -f docker-compose.prod.yml logs -f
+
+docker-compose -f docker-compose.prod.yml up -d --build
+-->

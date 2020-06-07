@@ -1,42 +1,32 @@
-# Dockerizing Django with Postgres, Gunicorn, and Nginx
+<p align="center"><strong style="color: red;">❌&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;STOP: DO NOT CLONE THIS REPO &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;❌</strong><br>Carefully <b>follow the instructions below</b> to ensure you <b>get credit</b> for this assignment.</p>
+
+# 🐳 Dockerizing Django with Postgres, Gunicorn, and Nginx
+[![GitHub](https://img.shields.io/github/forks/ChrisBarnes7404/{Project_Name}.svg?style=flat-square)](https://github.com/ChrisBarnes7404/Quiz_API/network)
+[![GitHub](https://img.shields.io/github/issues/ChrisBarnes7404/{Project_name}.svg?style=flat-square)](https://github.com/ChrisBarnes7404/Quiz_API/issues)
+
+![image](/staticfiles/img/README.jpeg)
+
+## 📂 Project Files
+
+| Filename | Description |
+| -------- | ----------- |
+| `.gitignore` | General ignore file. Optimized for Python. |
+| `.dockerignore` | A list of files that will not be copied during build. |
+| `captain-definition` | **DO NOT MODIFY.** Used by CapRover for deployment. |
+| `Dockerfile` | **Implement solutions in this file**. |
+| `README.md` | Replace this `README` with content describing the purpose of your project. |
+
 
 ## Want to learn how to build this?
 
 Check out the [post](https://testdriven.io/dockerizing-django-with-postgres-gunicorn-and-nginx).
-Or Download the starter from this [Repo](https://github.com/testdrivenio/django-on-docker).
-
-Also this Production ready Docker + Django + Bootstrap 4 starter pack. [project repo](https://github.com/ChrisBarnes7404/Docker-Django-Template)
-
-## [Dependants](Dependants.md)
-
-## Want to use this project?
-
-### Development
-
-Uses the default Django development server.
-
-1. Rename *.env.dev-sample* to *.env.dev*.
-1. Update the environment variables in the *docker-compose.yml* and *.env.dev* files.
-1. Build the images and run the containers:
-
-    ```sh
-    $ docker-compose up -d --build
-    ```
-
-    Test it out at [http://localhost:8000](http://localhost:8000). The "app" folder is mounted into the container and your code changes apply automatically.
-
-### Production
-
-Uses gunicorn + nginx.
-
-1. Rename *.env.prod-sample* to *.env.prod* and *.env.prod.db-sample* to *.env.prod.db*. Update the environment variables.
-1. Build the images and run the containers:
-
-    ```sh
-    $ docker-compose -f docker-compose.prod.yml up -d --build
-    ```
-
-    Test it out at [http://localhost:1337](http://localhost:1337). No mounted folders. To apply changes, the image must be re-built.
+Also this Modified Production ready Docker + Django + Bootstrap 4 starter pack. [project repo](https://github.com/ChrisBarnes7404/Docker-Django-Template)
+And follow the [Cloning & Contributions Instructions](Docs/Instructions.md)
 
 
-## Other Docker [Commands](Docker-comands.md)
+
+## [Dependants](Docs/Dependants.md)
+## [PROJECT PROPOSAL](Docs/Proposal.md)
+<!-- ## [TDD APPROACH](Docs/tdd.md) -->
+## [PROJECT SCORING](Docs/Rubirc-Scoring.md)
+## [User Instructions](Docs/Instructions.md)
