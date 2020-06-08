@@ -11,22 +11,12 @@
 **Write a paragraph summary of the current status of your project, what you hope to achieve during the intensive, how and why**
 
 ## [PROJECT PROPOSAL](Docs/Proposal.md)
-## [PROJECT SCORING](Docs/Rubirc-Scoring.md)
+## [PROJECT SCORING](Docs/Rubric-Scoring.md)
 <!-- ## [TDD APPROACH](Docs/tdd.md) -->
 
 <!-- ![image](/staticfiles/img/README.jpeg) -->
 
-## Want to learn how to build this?
+## Want to Contribute to this project or learn how to build one similar?
 
-Start with this Modified Production ready Docker + Django + Bootstrap 4 starter pack. [project repo](https://github.com/ChrisBarnes7404/Docker-Django-Template)
+Originally based on this [post](https://testdriven.io/dockerizing-django-with-postgres-gunicorn-and-nginx). You can start with this Modified Production ready Docker + Django + Bootstrap 4 starter pack. [project repo](https://github.com/ChrisBarnes7404/django-on-docker)
 <br>Read into it's [Dependants](Docs/Dependants.md) and follow the [Contribution/User Instructions](Docs/Instructions.md)
-
-## 📂 Project Files
-
-| Filename | Description |
-| -------- | ----------- |
-| `.gitignore` | General ignore file. Optimized for Python. |
-| `.dockerignore` | A list of files that will not be copied during build. |
-| `captain-definition` | **DO NOT MODIFY.** Used by CapRover for deployment. |
-| `Dockerfile` | **Implement solutions in this file**. |
-| `README.md` | Replace this `README` with content describing the purpose of your project. |

@@ -1,16 +1,18 @@
 # Contribute Instructions
+[Back](./)
 
 ## To Get Started Learn the [Difference Between Clone and Fork](https://www.toolsqa.com/git/difference-between-git-clone-and-git-fork/)
 
 Then clone and modify these files
 ```sh
-$ git clone https://github.com/ChrisBarnes7404/django-on-docker.git
+$ git clone https://github.com/ChrisBarnes7404/Repo-Name.git
 ```
 
 1. Rename `*.env.dev-sample*` to `*.env.development*`.
 2. Update the environment variables (ask team lead for new values) in the `*docker-compose.yml*` and `*.env.dev* files`.
 3. Build the images and run the containers:
 
+Command Short Cuts used below
 | Description               | Short Cut |       Regular       |
 | ------------------------- | --------- | ------------------- |
 | Add all changes           |  ga .     | git add .           |
@@ -22,14 +24,14 @@ $ git clone https://github.com/ChrisBarnes7404/django-on-docker.git
 
 # Development
 
-## Run Locally
+### Run Locally
 ```sh
 $ docker-compose up -d --build
 ```
 
 Test it out at [http://localhost:8000](http://localhost:8000). The "app" folder is mounted into the container and your code changes apply automatically.
 
-## Stop The Local Server
+### Stop The Local Server
 ```sh
 $ docker-compose down
 ```
@@ -64,7 +66,7 @@ $ docker-compose down
 Repeat branching and update your team and progress tracker
 
 
-# Production
+<!-- # Production
 
 Uses gunicorn + nginx.
 
@@ -77,9 +79,9 @@ Uses gunicorn + nginx.
 
     Test it out at [http://localhost:1337](http://localhost:1337). No mounted folders. To apply changes, the image must be re-built.
 
-## Stop The Server
+### Stop The Server
 ```sh
 $ docker-compose down
-```
+``` -->
 
 ## Other Docker [Commands](Docs/Docker-comands.md)

@@ -1,6 +1,17 @@
 # Dependants
 
-Origonally based on this [post](https://testdriven.io/dockerizing-django-with-postgres-gunicorn-and-nginx).
+Originally based on this [post](https://testdriven.io/dockerizing-django-with-postgres-gunicorn-and-nginx).
+
+## 📂 Project Files
+
+| Filename | Description |
+| -------- | ----------- |
+| `.gitignore` | General ignore file. Optimized for Python. |
+| `.dockerignore` | A list of files that will not be copied during build. |
+| `captain-definition` | **DO NOT MODIFY.** Used by CapRover for deployment. |
+| `Dockerfile` | **Implement solutions in this file**. |
+| `README.md` | Replace this `README` with content describing the purpose of your project. |
+
 
 Includes the following built in support for:
 - **[`django-admin-env-notice`](https://github.com/dizballanze/django-admin-env-notice)**: Visually distinguish environments in Django Admin.
@@ -20,6 +31,6 @@ Includes the following built in support for:
 
 
 - **[`pillow`](https://pillow.readthedocs.io/en/stable/)**: Pillow is a friendly PIL fork. PIL is the Python Imaging Library by Fredrik Lundh and Contributors.
+-->
 - **[`psycopg2-binary`](https://pypi.org/project/psycopg2-binary/)**: Stand-alone version of `psycopg2`, the most popular PostgreSQL database adapter for the Python programming language.
 - **[`whitenoise`](http://whitenoise.evans.io/en/stable/)**: With a couple of lines of config WhiteNoise allows your web app to serve its own static files, making it a self-contained unit that can be deployed anywhere without relying on nginx, Amazon S3 or any other external service. Especially useful on Heroku, OpenShift and other PaaS providers.
--->

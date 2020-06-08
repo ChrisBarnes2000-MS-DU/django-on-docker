@@ -1,4 +1,4 @@
-# Custom API Project - Scoring Rubric
+# Project - Scoring Rubric
 
 [Back](./)
 
@@ -13,8 +13,6 @@ Must receive higher than `70%` to pass the project.
 5. The API must have a discernible theme or **serve a distinct purpose**.
 6. The final project must be **deployed and fully accessible** via the internet and **callable via any consumer**.
 7. The final project must be **fully documented**.
-8. Must **develop the API using a TDD approach**.
-9. The syntax in the final project deliverable will **adhere to [Airbnb JavaScript Style Guide](https://github.com/airbnb/javascript)**.
 
 ## Required Criteria 
 
@@ -33,13 +31,13 @@ Must receive higher than `70%` to pass the project.
 | ------------------------------------------    | :-------: | :------: | :------: |
 | Can provision users                           |   `10`    |   `10`   |    ☑     |
 | `CREATE`, `READ`, `UPDATE`, `DELETE` objects  |   `20`    |   `00`   |    -     |
-| Template-based front-end interface            |   `20`    |   `00`   |    -     |
+| Template-based front-end interface            |   `20`    |   `20`   |    ☑     |
 | Has purpose & fulfills proposal               |   `30`    |   `00`   |    -     |
 | At least 2 apps in project                    |   `30`    |   `00`   |    -     |
 | At least 2 tests in `tests.py` in each app    |   `40`    |   `00`   |    -     |
 | Integrates an open source app                 |   `40`    |   `00`   |    -     |
 | Deployed & usable                             |   `50`    |   `00`   |    -     |
-| **TOTAL**                                    |  **`240`** | **` 0`** |          |
+| **TOTAL**                                    |  **`240`** | **`30`** |          |
 
 
 ## ✨ Finishing Touches
@@ -58,7 +56,7 @@ Must receive higher than `70%` to pass the project.
 | Section | Possible | Earned | Final (%) |
 | ------- | -------- | ------ | --------- |
 | Functional Requirements       |  `65` | `65` | 50% |
-| Non-Functional Requirements   | `240` | `10` |  4% |
+| Non-Functional Requirements   | `240` | `30` | 12% |
 | Bonus                         |  `55` |  `0` |  0% |
-| TOTAL                         | `305` | `75` |  54% |
-| TOTAL + Bonus                 | `360` | `75` | % |
+| TOTAL                         | `305` | `75` |  62% |
+| TOTAL + Bonus                 | `360` | `95` | % |
