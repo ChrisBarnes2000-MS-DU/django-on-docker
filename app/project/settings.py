@@ -22,16 +22,19 @@ INSTALLED_APPS = [
     "django.contrib.contenttypes",
     "django.contrib.sessions",
     "django.contrib.messages",
-    "django.contrib.staticfiles",
 
     'django.contrib.sites',
     'django.contrib.postgres',
+
+    'whitenoise.runserver_nostatic',
+    "django.contrib.staticfiles",
+
 
     "rest_framework",
 
 
 
-    "upload",
+    "utils",
 
 
 
@@ -66,17 +69,17 @@ INSTALLED_APPS = [
     # 'allauth.socialaccount.providers.eveonline',
     # 'allauth.socialaccount.providers.evernote',
     # 'allauth.socialaccount.providers.exist',
-    'allauth.socialaccount.providers.facebook',
+    # 'allauth.socialaccount.providers.facebook',        --
     # 'allauth.socialaccount.providers.feedly',
     # 'allauth.socialaccount.providers.fivehundredpx',
     # 'allauth.socialaccount.providers.flickr',
     # 'allauth.socialaccount.providers.foursquare',
     # 'allauth.socialaccount.providers.fxa',
-    'allauth.socialaccount.providers.github',
+    # 'allauth.socialaccount.providers.github',        --
     # 'allauth.socialaccount.providers.gitlab',
-    'allauth.socialaccount.providers.google',
+    # 'allauth.socialaccount.providers.google',        --
     # 'allauth.socialaccount.providers.hubic',
-    'allauth.socialaccount.providers.instagram',
+    # 'allauth.socialaccount.providers.instagram',        --
     # 'allauth.socialaccount.providers.jupyterhub',
     # 'allauth.socialaccount.providers.kakao',
     # 'allauth.socialaccount.providers.keycloak',
@@ -129,6 +132,7 @@ INSTALLED_APPS = [
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -141,7 +145,12 @@ MIDDLEWARE = [
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [
+            # Put strings here, like "/home/html/django_templates" or "C:/www/django/templates".
+            # Always use forward slashes, even on Windows.
+            # Don't forget to use absolute paths, not relative paths.
+            os.path.join(BASE_DIR, 'templates').replace('\\', '/'),
+        ],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -155,7 +164,7 @@ TEMPLATES = [
                 'django.template.context_processors.debug',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
-                # 'django.template.context_processors.media',
+                'django.template.context_processors.media',
             ],
         },
     },
@@ -239,8 +248,16 @@ USE_TZ = True
 # django.contrib.staticfiles
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
-STATIC_URL = "/staticfiles/"
-STATIC_ROOT = os.path.join(BASE_DIR, "staticfiles")
+# http://whitenoise.evans.io/en/stable/django.html
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+STATIC_HOST = os.environ.get('DJANGO_STATIC_HOST', '')
 
-MEDIA_URL = "/mediafiles/"
 MEDIA_ROOT = os.path.join(BASE_DIR, "mediafiles")
+STATIC_ROOT = os.path.join(BASE_DIR, "static")
+
+STATIC_URL = STATIC_HOST + '/static/'
+MEDIA_URL = STATIC_HOST + '/mediafiles/'
+
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, "static/assets"),
+]
