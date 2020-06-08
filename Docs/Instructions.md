@@ -1,69 +1,75 @@
-# User Instructions
+# Contribute Instructions
 
-## Want to use this project?
+## To Get Started Learn the [Difference Between Clone and Fork](https://www.toolsqa.com/git/difference-between-git-clone-and-git-fork/)
 
-(this will make a folder for the project be in the outter folder where you want it placed)
-> git clone url
+Then clone and modify these files
+```sh
+$ git clone https://github.com/ChrisBarnes7404/django-on-docker.git
+```
 
-> Navigate into this new folder
+1. Rename `*.env.dev-sample*` to `*.env.development*`.
+2. Update the environment variables (ask team lead for new values) in the `*docker-compose.yml*` and `*.env.dev* files`.
+3. Build the images and run the containers:
 
-> ls (you see requirements.txt and not settings.py)
-
-> touch .env
-
-> Navigate into folder named the same as outer folder
-
-> ls (you see settings.py and not requirements)
-
-> touch local_settings.py
-
-> .. (back to requirements)
-
-> Code . Or open in editor
+| Description               | Short Cut |       Regular       |
+| ------------------------- | --------- | ------------------- |
+| Add all changes           |  ga .     | git add .           |
+| checkout branch           |  gco      | git checkout        |
+| checkout master branch    |  gcm      | git checkout master |
+| merge changes to master   |  gm       | git merge Branch    |
+| push to origin            |  gp       | git push            |
 
 
+# Development
 
-### Development
+## Run Locally
+```sh
+$ docker-compose up -d --build
+```
 
-Uses the default Django development server.
+Test it out at [http://localhost:8000](http://localhost:8000). The "app" folder is mounted into the container and your code changes apply automatically.
 
-1. Rename *.env.dev-sample* to *.env.dev*.
-1. Update the environment variables in the *docker-compose.yml* and *.env.dev* files.
-1. Build the images and run the containers:
+## Stop The Local Server
+```sh
+$ docker-compose down
+```
 
+# Branching
+
+1. Create/Switch to branch and work on it there.. 
     ```sh
-    $ docker-compose up -d --build
+    $ gco FrontEnd
     ```
 
-    Test it out at [http://localhost:8000](http://localhost:8000). The "app" folder is mounted into the container and your code changes apply automatically.
+2. Edit Stuff and Test locally
 
-### Branching
+3. add, commit, & Push to that branch 
+    ```sh
+    $ git push origin FrontEnd/Development/Fixes
+    ```
 
-Create/Switch to branch and work on it there.. 
-> (gco/git checkout) FrontEnd
-
-Make and edit and Test locally
-
-add, commit, & Push to that branch 
-
-> git push origin FrontEnd/Development/Fixes
-
-Switch to master, merge, and push 
-> (gcm/git checkout master)
-
-> (gm/git merge) FrontEnd/Development/Fixes
-
-> (gp/git push)
+4. Switch to master
+    ```sh
+    $ gcm
+    ```
+5. Merge with master
+    ```sh
+    $ gm FrontEnd/Development/Fixes
+    ```
+3. Push
+    ```sh
+    $ gp
+    ```
 
 Repeat branching and update your team and progress tracker
 
 
-### Production
+# Production
 
 Uses gunicorn + nginx.
 
-1. Rename *.env.prod-sample* to *.env.prod* and *.env.prod.db-sample* to *.env.prod.db*. Update the environment variables.
-1. Build the images and run the containers:
+1. Rename `*.env.prod-sample*` to `*.env.production*` and `*.env.prod.db-sample*` to `*.env.prod.db*`. Update the environment variables (again ask team lead).
+2. Build the images and run the containers:
 
     ```sh
     $ docker-compose -f docker-compose.prod.yml up -d --build
@@ -71,5 +77,9 @@ Uses gunicorn + nginx.
 
     Test it out at [http://localhost:1337](http://localhost:1337). No mounted folders. To apply changes, the image must be re-built.
 
+## Stop The Server
+```sh
+$ docker-compose down
+```
 
 ## Other Docker [Commands](Docs/Docker-comands.md)

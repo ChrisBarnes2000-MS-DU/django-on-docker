@@ -8,10 +8,10 @@ DEBUG = os.environ.get("DEBUG")
 ROOT_URLCONF = 'project.urls'
 WSGI_APPLICATION = 'project.wsgi.application'
 
-ENVIRONMENT_NAME = "Development server"
-ENVIRONMENT_COLOR = "#FF0000"
-ENVIRONMENT_FLOAT = True
-# ENVIRONMENT_ADMIN_SELECTOR = "grp-header"
+ENVIRONMENT_NAME = os.environ.get("ENVIRONMENT_NAME", 'Production Server')
+ENVIRONMENT_COLOR = os.environ.get("ENVIRONMENT_COLOR", '#006400')
+ENVIRONMENT_FLOAT = os.environ.get("ENVIRONMENT_FLOAT", 'True')
+# ENVIRONMENT_ADMIN_SELECTOR = os.environ.get("ENVIRONMENT_ADMIN_SELECTOR")
 
 
 INSTALLED_APPS = [

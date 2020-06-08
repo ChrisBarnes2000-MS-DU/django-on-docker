@@ -1,6 +1,6 @@
-<p align="center">
+<!-- <p align="center">
 <strong style="color: red;">❌&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;STOP: DO NOT CLONE THIS REPO &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;❌</strong>
-<br><b>Carefully</b> follow the instructions <a href="Docs/Instructions.md">Here</a> to ensure your contributions are tracked correctly.</p>
+<br><b>Carefully</b> follow the instructions <a href="Docs/Instructions.md">Here</a> to ensure your contributions are tracked correctly.</p> -->
 
 # 🐳 Dockerizing Django with Postgres, Gunicorn, and Nginx
 [![GitHub](https://img.shields.io/github/forks/ChrisBarnes7404/Project_Name.svg?style=flat-square)](https://github.com/ChrisBarnes7404/Project_Name/network)

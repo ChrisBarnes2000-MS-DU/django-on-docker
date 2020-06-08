@@ -2,6 +2,8 @@
 
 {% block title %}{{ title }} | {{ site_title|default:_('Django site admin') }}{% endblock %}
 
+{% include 'partials/navbar.html' %}
+
 {% block branding %}
 <h1 id="site-name"><a href="{% url 'admin:index' %}">Project-Name Administration</a></h1>
 {% endblock %}
