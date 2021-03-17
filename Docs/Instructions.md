@@ -1,87 +1,102 @@
 # Contribute Instructions
+
 [Back](./)
 
-## To Get Started Learn the [Difference Between Clone and Fork](https://www.toolsqa.com/git/difference-between-git-clone-and-git-fork/)
+## First, Fork This Repo by clicking here [![GitHub](https://img.shields.io/github/forks/Christopher-MakeSchool/django-on-docker.svg?style=flat-square)](https://github.com/Christopher-MakeSchool/django-on-docker/fork).
 
-Then clone and modify these files
-```sh
-$ git clone https://github.com/ChrisBarnes7404/Repo-Name.git
+## Second, Clone your version for local dovelopment
+
+```zsh
+$ git clone https://github.com/YourUserName/django-on-docker.git
 ```
 
-1. Rename `*.env.dev-sample*` to `*.env.development*`.
-2. Update the environment variables (ask team lead for new values) in the `*docker-compose.yml*` and `*.env.dev* files`.
-3. Build the images and run the containers:
+## Third, Create a new branch starting with your username
 
-Command Short Cuts used below
-| Description               | Short Cut |       Regular       |
-| ------------------------- | --------- | ------------------- |
-| Add all changes           |  ga .     | git add .           |
-| checkout branch           |  gco      | git checkout        |
-| checkout master branch    |  gcm      | git checkout master |
-| merge changes to master   |  gm       | git merge Branch    |
-| push to origin            |  gp       | git push            |
+```zsh
+$ git checkout -b ChrisBarnes2000
+or
+$ gco -b ChrisBarnes2000
+```
 
+## Fourth, Configure Your Local Environment
 
-# Development
+1. Rename `.env-sample` to `.env.dev` & `.env-db-sample` to `.env-db`.
+2. Update the variables in these files (ask team lead for new values).
+3. Run Locally, by Building the images to run the containers
 
-### Run Locally
-```sh
+```zsh
 $ docker-compose up -d --build
 ```
 
 Test it out at [http://localhost:8000](http://localhost:8000). The "app" folder is mounted into the container and your code changes apply automatically.
 
 ### Stop The Local Server
-```sh
+
+```zsh
 $ docker-compose down
 ```
 
-# Branching
+## Fifth, Make Modificaitons on your new branch
 
-1. Create/Switch to branch and work on it there.. 
-    ```sh
-    $ gco FrontEnd
+#### Remember to Document your Changes.
+
+### Command Short Cuts used below
+
+| Description             | Short Cut | Regular             |
+| ----------------------- | --------- | ------------------- |
+| Add all changes         | ga .      | git add .           |
+| checkout branch         | gco       | git checkout        |
+| checkout master branch  | gcm       | git checkout master |
+| merge changes to master | gm        | git merge Branch    |
+| push to origin          | gp        | git push            |
+
+## Local Branch Development
+
+1. Create/Switch to branch and work on it there..
+
+    ```zsh
+    $ gco <Branch-Name>
     ```
 
 2. Edit Stuff and Test locally
 
-3. add, commit, & Push to that branch 
-    ```sh
-    $ git push origin FrontEnd/Development/Fixes
+3. add, commit, & Push to that branch
+
+    Use tags when committing ```ga .;gcmsg "[function] description"```
+
+    - [Add]: File or Function XYZ
+    - [Fix]: Typo or Function or explaination, etc
+    - [Pull]: From Whom or What Branch For What Reason
+    - [Refactor]: File or Function XYZ For Reason LMNOP
+    - [Remove]: File or Function XYZ For Reason LMNOP
+    - [Update]: File or Function XYZ For Reason LMNOP
+
+    ```zsh
+    $ git push origin <Branch-Name>
     ```
 
 4. Switch to master
-    ```sh
+
+    ```zsh
     $ gcm
+    or 
+    $ git checkout master
     ```
+
 5. Merge with master
+
     ```sh
-    $ gm FrontEnd/Development/Fixes
+    $ gm <Branch-Name>
+    or
+    $ git merge <Branch-Name>
     ```
-3. Push
+
+6. Push
+
     ```sh
     $ gp
+    or
+    $ git push
     ```
 
 Repeat branching and update your team and progress tracker
-
-
-<!-- # Production
-
-Uses gunicorn + nginx.
-
-1. Rename `*.env.prod-sample*` to `*.env.production*` and `*.env.prod.db-sample*` to `*.env.prod.db*`. Update the environment variables (again ask team lead).
-2. Build the images and run the containers:
-
-    ```sh
-    $ docker-compose -f docker-compose.prod.yml up -d --build
-    ```
-
-    Test it out at [http://localhost:1337](http://localhost:1337). No mounted folders. To apply changes, the image must be re-built.
-
-### Stop The Server
-```sh
-$ docker-compose down
-``` -->
-
-## Other Docker [Commands](Docs/Docker-comands.md)
